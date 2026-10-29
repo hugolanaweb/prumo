@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Prumo Construtora — Casas sob medida em Goiânia</title>
+  <meta name="description" content="Construímos casas em condomínios de Goiânia e região com custo e prazo definidos antes da obra — e um diário semanal para você acompanhar cada etapa sem sair de casa.">
+  <meta name="theme-color" content="#2A211C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232A211C'/%3E%3Cpath d='M16 5v5M9 10h14L16 26z' fill='%23A9803E' stroke='%23A9803E' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <meta property="og:title" content="Prumo Construtora — Casa construída do jeito que foi combinada.">
+  <meta property="og:description" content="Custo e prazo definidos antes da obra. Diário semanal toda sexta.">
+  <meta property="og:image" content="assets/img/hero-poster.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-poster.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-poster-m.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/tokens.css?v=9">
+  <link rel="stylesheet" href="css/site.css?v=9">
+  <script src="js/painel-demo.js?v=9" defer></script>
+  <script src="js/projetos-demo.js?v=9" defer></script>
+  <script src="js/site.js?v=9" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- PlumbLine: fio de prumo (desktop) / barra de progresso (mobile) -->
+  <div class="plumb" aria-hidden="true">
+    <span class="plumb__line" data-plumb-line></span>
+    <svg class="plumb__bob" viewBox="0 0 12 16" width="12" height="16" data-plumb-bob><path d="M6 0v3M1 3h10L6 15z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+  <!-- Header: pílula flutuante -->
+  <header class="site-header" data-header>
+    <div class="site-header__bar">
+      <a class="site-header__logo" href="#topo" aria-label="Prumo Construtora — início">
+        <svg viewBox="0 0 12 16" width="10" height="14" aria-hidden="true"><path d="M6 0v3M1 3h10L6 15z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
+        Prumo
+      </a>
+
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list" id="site-nav-list" data-nav-list>
+          <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
+          <li><a href="#acompanhamento">Acompanhamento</a></li>
+          <li><a href="#contratos">Contratos</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#para-arquitetos">Para arquitetos</a></li>
+          <li><a href="#perguntas">Perguntas</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--light btn--sm site-header__cta" href="#agendar">Agendar estudo</a>
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav-list" data-nav-toggle>
+        <span class="site-header__toggle-bars" aria-hidden="true"></span>
+        <span data-nav-toggle-label>Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ▽ +0,00 · HERO -->
+    <section class="hero" id="topo" aria-labelledby="hero-title" data-hero>
+      <!-- Fica preso na tela enquanto a rolagem avança a câmera até a casa -->
+      <div class="hero__sticky">
+        <div class="hero__media">
+          <picture>
+            <source media="(max-width: 767px)" srcset="assets/img/hero-poster-m.webp" type="image/webp">
+            <source srcset="assets/img/hero-poster.webp" type="image/webp">
+            <img class="hero__poster" src="assets/img/hero-poster.jpg" alt="" width="1280" height="720" fetchpriority="high">
+          </picture>
+          <canvas class="hero__canvas" aria-hidden="true" data-hero-canvas></canvas>
+          <div class="hero__grain" aria-hidden="true"></div>
+          <div class="hero__shade" aria-hidden="true"></div>
+        </div>
+
+        <div class="hero__inner">
+          <div class="hero__lead">
+            <p class="level-marker level-marker--on-dark" data-level>
+              <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+              <span>+0,00</span><span aria-hidden="true">·</span><span>Casas sob medida em Goiânia</span>
+            </p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="w" style="--i:0">Casa</span>
+              <span class="w" style="--i:1">construída</span>
+              <span class="w" style="--i:2">do</span>
+              <span class="w" style="--i:3">jeito</span>
+              <span class="w" style="--i:4">que</span>
+              <span class="w" style="--i:5">foi</span>
+              <span class="w" style="--i:6"><em>combinada</em>.</span>
+            </h1>
+          </div>
+
+          <div class="hero__aside">
+            <p class="hero__support">Construímos casas em condomínios de Goiânia e região com custo e prazo definidos antes da obra — e um diário semanal para você acompanhar cada etapa sem sair de casa.</p>
+            <div class="hero__actions">
+              <a class="btn btn--light" href="#agendar">
+                Agendar estudo do meu lote
+                <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </a>
+              <a class="btn btn--ghost-light" href="#acompanhamento">Ver como acompanhamos a obra</a>
+            </div>
+          </div>
+
+          <div class="hero__meta">
+            <span class="badge badge--on-dark">Imagem ilustrativa</span>
+            <p class="hero__hint" aria-hidden="true">
+              Role para se aproximar da casa
+              <span class="hero__hint-line"><span></span></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ▽ +1,00 · O QUE MUDA -->
+    <section class="section" id="o-que-muda" aria-labelledby="t-muda">
+      <div class="container split">
+        <header class="section-header split__head">
+          <p class="level-marker" data-level>
+            <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+            <span>+1,00</span><span aria-hidden="true">·</span><span>O que muda com a Prumo</span>
+          </p>
+          <h2 class="section-title" id="t-muda"><span class="dim-wrap">Antes do primeiro tijolo, tudo no <em>papel</em>.<span class="dim" aria-hidden="true"></span></span></h2>
+          <a class="btn btn--outline" href="#contratos">
+            Comparar os contratos
+            <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+        </header>
+
+        <ul class="pillars split__body">
+          <li class="pillar">
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 14 2 2 4-4"/></svg></span>
+            <div>
+              <h3 class="pillar__title">Escopo fechado</h3>
+              <p>Projeto executivo, memorial e acabamentos aprovados antes de começar.</p>
+            </div>
+          </li>
+          <li class="pillar">
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></span>
+            <div>
+              <h3 class="pillar__title">Número conhecido</h3>
+              <p>Orçamento por etapa e cronograma físico-financeiro no contrato. Mudanças orçadas antes.</p>
+            </div>
+          </li>
+          <li class="pillar">
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 8a2 2 0 0 1 2-2h2l1.5-2h5L16 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+            <div>
+              <h3 class="pillar__title">Obra visível</h3>
+              <p>Toda sexta, fotos datadas, avanço por etapa e próxima semana.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ▽ +2,00 · PROJETOS (SqueezeCarousel) -->
+    <section class="section section--tight-top" id="projetos" aria-labelledby="t-projetos">
+      <div class="container">
+        <header class="section-header section-header--row projects__head">
+          <div>
+            <p class="level-marker" data-level>
+              <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+              <span>+2,00</span><span aria-hidden="true">·</span><span>Projetos</span>
+            </p>
+            <h2 class="section-title" id="t-projetos"><span class="dim-wrap">Obras com data, etapa e nome do arquiteto.<span class="dim" aria-hidden="true"></span></span></h2>
+          </div>
+          <div class="projects__tools">
+            <div class="squeeze__controls">
+              <button class="squeeze__arrow" type="button" aria-label="Projeto anterior" data-squeeze-prev>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              </button>
+              <button class="squeeze__arrow" type="button" aria-label="Próximo projeto" data-squeeze-next>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="squeeze" data-squeeze>
+          <div class="squeeze__viewport">
+            <div class="squeeze__strip" role="tablist" aria-label="Projetos" aria-orientation="horizontal" data-squeeze-strip></div>
+          </div>
+          <div class="squeeze__panels" id="squeeze-panel" role="tabpanel" aria-live="polite" data-squeeze-panels></div>
+        </div>
+
+        <p class="projects__foot">Quer ver uma obra de perto? <a href="#agendar">Agende uma visita a uma obra em andamento.</a></p>
+      </div>
+    </section>
+
+    <!-- ▽ +3,00 · COMO TRABALHAMOS (rolagem conduz as etapas) -->
+    <section class="process" id="como-trabalhamos" aria-labelledby="t-como" data-process>
+      <div class="process__track">
+        <div class="process__sticky">
+          <div class="container process__grid">
+            <header class="process__head">
+              <p class="level-marker" data-level>
+                <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+                <span>+3,00</span><span aria-hidden="true">·</span><span>Como trabalhamos</span>
+              </p>
+              <h2 class="section-title" id="t-como"><span class="dim-wrap">Oito etapas. Um documento ao fim de cada uma.<span class="dim" aria-hidden="true"></span></span></h2>
+              <p class="section-lead">Você sabe sempre em que ponto está, o que já foi decidido e o que falta decidir.</p>
+
+              <div class="rail" data-rail>
+                <span class="rail__fill" aria-hidden="true"></span>
+              <ol class="rail__list" aria-label="Etapas">
+                <li><button type="button" data-rail-go="0"><span class="rail__n">01</span>Conversa inicial</button></li>
+                <li><button type="button" data-rail-go="1"><span class="rail__n">02</span>Estudo do lote</button></li>
+                <li><button type="button" data-rail-go="2"><span class="rail__n">03</span>Projeto</button></li>
+                <li><button type="button" data-rail-go="3"><span class="rail__n">04</span>Orçamento executivo e contrato</button></li>
+                <li><button type="button" data-rail-go="4"><span class="rail__n">05</span>Aprovações</button></li>
+                <li><button type="button" data-rail-go="5"><span class="rail__n">06</span>Obra</button></li>
+                <li><button type="button" data-rail-go="6"><span class="rail__n">07</span>Entrega</button></li>
+                <li><button type="button" data-rail-go="7"><span class="rail__n">08</span>Pós-obra</button></li>
+              </ol>
+              </div>
+            </header>
+
+            <div class="process__stage">
+              <ol class="psteps">
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+                    <span class="pstep__count">Etapa 01 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">01</span>
+                  <h3 class="pstep__title">Conversa inicial</h3>
+                  <p class="pstep__text">Entendemos o lote, o projeto e o prazo que você tem em mente.</p>
+                </li>
+                <li class="pstep pstep--start" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h4M3 13h4M8 3v4M13 3v4"/><path d="m12 12 5 5"/></svg></span>
+                    <span class="pstep__count">Etapa 02 de 08</span>
+                    <span class="chip chip--start">Comece aqui</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">02</span>
+                  <h3 class="pstep__title">Estudo do lote</h3>
+                  <p class="pstep__text">O que cabe no terreno, quanto custa cada etapa e quanto tempo leva. Em até 15 dias úteis, e o valor é abatido do contrato.</p>
+                  <a class="btn btn--light pstep__cta" href="#agendar">
+                    Agendar estudo do meu lote
+                    <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                  </a>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="m14 7 3 3"/><path d="M4 20h16"/></svg></span>
+                    <span class="pstep__count">Etapa 03 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">03</span>
+                  <h3 class="pstep__title">Projeto</h3>
+                  <p class="pstep__text">O projeto é do seu arquiteto. Executivo, memorial e acabamentos fechados antes de orçar.</p>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
+                    <span class="pstep__count">Etapa 04 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">04</span>
+                  <h3 class="pstep__title">Orçamento executivo e contrato</h3>
+                  <p class="pstep__text">Orçamento por etapa e cronograma físico-financeiro no contrato. Mudanças são orçadas antes.</p>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span>
+                    <span class="pstep__count">Etapa 05 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">05</span>
+                  <h3 class="pstep__title">Aprovações</h3>
+                  <p class="pstep__text">Aprovações necessárias antes de a obra começar.</p>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.3h18M3 14.7h18M9 4v5.3M15 9.3v5.4M9 14.7V20"/></svg></span>
+                    <span class="pstep__count">Etapa 06 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">06</span>
+                  <h3 class="pstep__title">Obra</h3>
+                  <p class="pstep__text">Diário toda sexta: fotos datadas, avanço por etapa e o que acontece na próxima semana.</p>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2M17 6l2 2M15 8l2 2"/></svg></span>
+                    <span class="pstep__count">Etapa 07 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">07</span>
+                  <h3 class="pstep__title">Entrega</h3>
+                  <p class="pstep__text">A casa entregue conforme o escopo aprovado no contrato.</p>
+                </li>
+                <li class="pstep" data-step>
+                  <div class="pstep__top">
+                    <span class="pstep__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></span>
+                    <span class="pstep__count">Etapa 08 de 08</span>
+                  </div>
+                  <span class="pstep__n" aria-hidden="true">08</span>
+                  <h3 class="pstep__title">Pós-obra</h3>
+                  <p class="pstep__text">Revisões aos 6 e 12 meses e um canal para chamados.</p>
+                </li>
+              </ol>
+              <div class="meter" aria-hidden="true" data-meter>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ▽ +4,00 · ACOMPANHAMENTO (seção escura) -->
+    <section class="section section--dark" id="acompanhamento" aria-labelledby="t-acomp">
+      <div class="container panel-layout">
+        <header class="section-header panel-layout__head">
+          <p class="level-marker level-marker--on-dark" data-level>
+            <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+            <span>+4,00</span><span aria-hidden="true">·</span><span>Acompanhamento</span>
+          </p>
+          <h2 class="section-title" id="t-acomp"><span class="dim-wrap">Toda sexta, a sua obra no seu <em>celular</em>.<span class="dim" aria-hidden="true"></span></span></h2>
+          <p class="section-lead">Avanço por etapa, fotos com data, cronograma e próximos passos. No contrato por administração, também cada compra e cada nota fiscal.</p>
+
+          <div class="segmented segmented--on-dark" role="radiogroup" aria-label="Tipo de contrato da demonstração" data-contract-toggle>
+            <button type="button" role="radio" aria-checked="true" data-contract="fechado">Preço fechado</button>
+            <button type="button" role="radio" aria-checked="false" data-contract="administracao">Administração</button>
+          </div>
+        </header>
+
+        <!-- SitePanelDemo -->
+        <div class="panel" data-panel>
+          <div class="panel__top">
+            <div>
+              <p class="panel__eyebrow" data-panel-date></p>
+              <p class="panel__title" data-panel-title></p>
+            </div>
+            <span class="badge">Dados fictícios de demonstração</span>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Seções do painel">
+            <button class="tabs__tab" role="tab" id="tab-resumo" aria-controls="tp-resumo" aria-selected="true" data-tab="resumo">Resumo</button>
+            <button class="tabs__tab" role="tab" id="tab-etapas" aria-controls="tp-etapas" aria-selected="false" tabindex="-1" data-tab="etapas">Etapas</button>
+            <button class="tabs__tab" role="tab" id="tab-fotos" aria-controls="tp-fotos" aria-selected="false" tabindex="-1" data-tab="fotos">Fotos</button>
+            <button class="tabs__tab" role="tab" id="tab-financeiro" aria-controls="tp-financeiro" aria-selected="false" tabindex="-1" data-tab="financeiro" hidden>Financeiro</button>
+          </div>
+
+          <div class="panel__body">
+            <div class="tabpanel" role="tabpanel" id="tp-resumo" aria-labelledby="tab-resumo" tabindex="0" data-tabpanel="resumo"></div>
+            <div class="tabpanel" role="tabpanel" id="tp-etapas" aria-labelledby="tab-etapas" tabindex="0" data-tabpanel="etapas" hidden></div>
+            <div class="tabpanel" role="tabpanel" id="tp-fotos" aria-labelledby="tab-fotos" tabindex="0" data-tabpanel="fotos" hidden></div>
+            <div class="tabpanel" role="tabpanel" id="tp-financeiro" aria-labelledby="tab-financeiro" tabindex="0" data-tabpanel="financeiro" hidden></div>
+          </div>
+
+          <details class="panel__table">
+            <summary>Ver os dados do painel em tabela</summary>
+            <div data-panel-table></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ▽ +5,00 · CONTRATOS -->
+    <section class="section" id="contratos" aria-labelledby="t-contratos">
+      <div class="container">
+        <header class="section-header">
+          <p class="level-marker" data-level>
+            <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+            <span>+5,00</span><span aria-hidden="true">·</span><span>Contratos</span>
+          </p>
+          <h2 class="section-title" id="t-contratos"><span class="dim-wrap">Dois contratos. Nenhuma letra <em>miúda</em>.<span class="dim" aria-hidden="true"></span></span></h2>
+        </header>
+
+        <div class="contracts">
+          <article class="contract contract--featured">
+            <span class="contract__dim" aria-hidden="true"></span>
+            <div class="contract__head">
+              <p class="contract__kicker">Contrato</p>
+              <span class="chip chip--featured"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/></svg>Mais escolhido</span>
+            </div>
+            <h3 class="contract__title">Preço fechado</h3>
+            <p class="contract__summary">Um valor para a obra inteira, definido no contrato antes de começar.</p>
+            <ul class="checklist">
+              <li>Valor e cronograma definidos no contrato</li>
+              <li>Orçamento por etapa e cronograma físico-financeiro</li>
+              <li>Mudanças orçadas e aprovadas por você antes</li>
+              <li>Diário da obra toda sexta</li>
+            </ul>
+            <p class="contract__fit"><strong>Combina com você se</strong> quer saber o número final desde o início.</p>
+            <a class="btn btn--light contract__cta" href="#agendar">
+              Agendar estudo do meu lote
+              <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+          </article>
+
+          <article class="contract">
+            <span class="contract__dim" aria-hidden="true"></span>
+            <p class="contract__kicker">Contrato</p>
+            <h3 class="contract__title">Administração</h3>
+            <p class="contract__summary">Você paga o custo real da obra mais uma taxa fixa de administração.</p>
+            <ul class="checklist">
+              <li>Taxa fixa de 12% sobre o custo <span class="note">(valor ilustrativo)</span></li>
+              <li>Notas fiscais no seu nome</li>
+              <li>Cada compra e cada nota no diário da obra</li>
+              <li>Diário da obra toda sexta</li>
+            </ul>
+            <p class="contract__fit"><strong>Combina com você se</strong> quer ver cada compra e participar das escolhas.</p>
+            <a class="btn btn--outline contract__cta" href="#agendar">
+              Agendar estudo do meu lote
+              <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+          </article>
+        </div>
+
+        <p class="contracts__foot">Não sabe qual escolher? No <a href="#como-trabalhamos">estudo do lote</a> você recebe o custo por etapa e decide com o número na mão.</p>
+      </div>
+    </section>
+
+    <!-- ▽ +6,00 · CONFORTO -->
+    <section class="section section--tint" id="conforto" aria-labelledby="t-conforto">
+      <div class="container sun-layout">
+        <header class="section-header sun-layout__head">
+          <p class="level-marker" data-level>
+            <svg class="level-marker__glyph" viewBox="0 0 10 9" width="10" height="9" aria-hidden="true"><path d="M.5.5h9L5 8.3z"/></svg>
+            <span>+6,00</span><span aria-hidden="true">·</span><span>Conforto</span>
+          </p>
+          <h2 class="section-title" id="t-conforto"><span class="dim-wrap">Beiral, sombra e vento antes do <em>ar-condicionado</em>.<span class="dim" aria-hidden="true"></span></span></h2>
+          <p class="section-lead">Arraste o sol para ver como o beiral bloqueia o sol alto do verão e deixa entrar o sol baixo do inverno.</p>
+
+          <div class="sun-control">
+            <label class="sun-control__label" for="sun-range">Época do ano</label>
+            <input class="range" id="sun-range" type="range" min="0" max="100" value="0" step="1" aria-describedby="sun-desc" data-sun-range>
+            <div class="sun-control__ends" aria-hidden="true"><span>Verão</span><span>Inverno</span></div>
+          </div>
+          <p class="sun-desc" id="sun-desc" aria-live="polite" data-sun-desc></p>
+        </header>
+
+        <figure class="sun-figure">
+          <svg class="sun" viewBox="0 0 640 440" role="img" aria-labelledby="sun-title" data-sun>
+            <title id="sun-title">Corte esquemático de uma casa com beiral, mostrando a sombra conforme a altura do sol</title>
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v6" stroke="currentColor" stroke-width="1" opacity=".35"/></pattern>
+            </defs>
+            <!-- arco do sol -->
+            <path class="sun__arc" d="M40 380 A 300 300 0 0 1 600 380" fill="none"/>
+            <!-- sombra no piso interno (sol que entra) -->
+            <polygon class="sun__patch" data-sun-patch points="0,0"/>
+            <!-- raio -->
+            <line class="sun__ray" data-sun-ray x1="0" y1="0" x2="0" y2="0"/>
+            <!-- terreno -->
+            <line class="sun__ground" x1="20" y1="380" x2="620" y2="380"/>
+            <rect x="20" y="380" width="600" height="14" fill="url(#hatch)" class="sun__hatch"/>
+            <!-- casa: laje/cobertura com beiral -->
+            <rect class="sun__solid" x="300" y="150" width="270" height="16" rx="2"/>
+            <rect class="sun__solid" x="210" y="150" width="96" height="10" rx="2"/>
+            <!-- parede da fachada com janela -->
+            <rect class="sun__solid" x="300" y="166" width="12" height="34"/>
+            <rect class="sun__glass" x="302" y="200" width="8" height="170"/>
+            <rect class="sun__solid" x="300" y="370" width="12" height="10"/>
+            <!-- parede do fundo -->
+            <rect class="sun__solid" x="558" y="166" width="12" height="214"/>
+            <!-- sombra do beiral na fachada -->
+            <polygon class="sun__shadow" data-sun-shadow points="0,0"/>
+            <!-- vento -->
+            <path class="sun__wind" d="M240 300 C 330 290, 420 310, 545 290" />
+            <path class="sun__wind" d="M240 330 C 340 322, 430 340, 545 322" />
+            <text class="sun__label" x="250" y="140">beiral</text>
+            <text class="sun__label" x="244" y="290">vento</text>
+            <!-- sol -->
+            <g data-sun-disc>
+              <circle class="sun__halo" r="26"/>
+              <circle class="sun__disc" r="14"/>
+            </g>
+          </svg>
+          <figcaption class="badge">Diagrama ilustrativo, sem valor de cálculo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Faixa arquitetos -->
+    <section class="section section--tight-top" id="para-arquitetos" aria-labelledby="t-arq">
+      <div class="container">
+        <div class="architects">
+          <div class="architects__text">
+            <h2 class="section-title" id="t-arq">O projeto é do seu arquiteto. A execução é <em>nossa</em>.</h2>
+            <ul class="checklist checklist--compact">
+              <li>Construímos o projeto como foi desenhado</li>
+              <li>Mudanças orçadas e aprovadas antes de executar</li>
+              <li>Diário semanal também para o escritório</li>
+            </ul>
+            <a class="btn btn--dark" href="#agendar" data-architect-cta>
+              Sou arquiteto
+              <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+          </div>
+          <div class="architects__media">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&q=70&auto=format&fit=crop"
+                 alt="Mãos sobre uma prancha de projeto com régua" loading="lazy" decoding="async" width="1000" height="667">
+            <span class="badge badge--on-dark architects__badge">Imagem ilustrativa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--tight-top" id="perguntas" aria-labelledby="t-faq">
+      <div class="container faq-layout">
+        <header class="section-header faq-layout__head">
+          <h2 class="section-title" id="t-faq"><span class="dim-wrap">Perguntas que todo mundo faz antes de <em>construir</em>.<span class="dim" aria-hidden="true"></span></span></h2>
+        </header>
+
+        <div class="faq">
+          <details class="faq__item" name="faq">
+            <summary>Vocês fazem o projeto da casa?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <p>Não. Construímos o projeto feito pelo seu arquiteto. O projeto é dele; a execução é nossa.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>Quanto custa o estudo do lote?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <p>A partir de R$ 3.800 <span class="note">(valor ilustrativo)</span>. Se você seguir com a Prumo, o valor do estudo é abatido do contrato.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>Qual a diferença entre preço fechado e administração?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <p>No preço fechado, o valor da obra é definido no contrato. Na administração, você paga o custo real mais uma taxa fixa <span class="note">(ilustrativa: 12%)</span>, com as notas fiscais no seu nome.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>Como acompanho a obra sem ir até lá?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <p>Toda sexta você recebe o diário da obra: fotos com data, avanço por etapa, cronograma e próximos passos.</p>
+          </details>
+          <details class="faq__item" name="faq">
+            <summary>Que tipo de obra vocês fazem?<span class="faq__icon" aria-hidden="true"></span></summary>
+            <p>Casas sob medida de 300 a 700 m² em condomínios horizontais de Goiânia e Região Metropolitana. Não fazemos reformas, prédios nem obras comerciais.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final + formulário -->
+    <section class="section section--cta" id="agendar" aria-labelledby="t-cta">
+      <div class="container cta-layout">
+        <header class="cta-layout__head">
+          <h2 class="cta-title" id="t-cta">Comece pelo <em>lote</em>.</h2>
+          <p class="section-lead">Em até 15 dias úteis você recebe um estudo com o que cabe no seu terreno, quanto custa cada etapa e quanto tempo leva. Se seguir com a Prumo, o valor do estudo é abatido do contrato.</p>
+          <dl class="facts">
+            <div><dt>Prazo do estudo</dt><dd>até 15 dias úteis</dd></div>
+            <div><dt>Investimento</dt><dd>a partir de R$ 3.800 <span class="note">(ilustrativo)</span></dd></div>
+            <div><dt>Se fechar contrato</dt><dd>valor abatido</dd></div>
+          </dl>
+          <div class="cta-contact">
+            <p>Prefere conversar antes?</p>
+            <a class="btn btn--outline" href="#agendar" data-whatsapp><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Entre em contato</a>
+          </div>
+        </header>
+
+        <!-- MultiStepForm -->
+        <div class="form-card">
+          <form class="msf" novalidate data-form>
+            <div class="msf__head">
+              <p class="msf__title">Agendar estudo do meu lote</p>
+              <p class="msf__step" data-form-step-label>Passo 1 de 2</p>
+            </div>
+            <div class="msf__progress" role="progressbar" aria-label="Progresso do formulário" aria-valuemin="1" aria-valuemax="2" aria-valuenow="1"><span data-form-progress></span></div>
+            <p class="visually-hidden" aria-live="polite" data-form-live></p>
+
+            <!-- honeypot -->
+            <div class="msf__hp" aria-hidden="true">
+              <label for="f-empresa">Empresa</label>
+              <input id="f-empresa" name="empresa" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <fieldset class="msf__step-fields" data-form-step="1">
+              <legend class="visually-hidden">Seus dados</legend>
+              <div class="field">
+                <label for="f-nome">Nome <span aria-hidden="true">*</span></label>
+                <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+                <p class="field__error" id="e-nome"></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-whats">WhatsApp <span aria-hidden="true">*</span></label>
+                  <input id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(62) 9 0000-0000" required>
+                  <p class="field__error" id="e-whats"></p>
+                </div>
+                <div class="field">
+                  <label for="f-email">E-mail <span aria-hidden="true">*</span></label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" required>
+                  <p class="field__error" id="e-email"></p>
+                </div>
+              </div>
+              <fieldset class="field">
+                <legend>Como prefere o contato?</legend>
+                <div class="choice-pills">
+                  <label><input type="radio" name="preferencia" value="WhatsApp" checked><span>WhatsApp</span></label>
+                  <label><input type="radio" name="preferencia" value="Ligação"><span>Ligação</span></label>
+                  <label><input type="radio" name="preferencia" value="E-mail"><span>E-mail</span></label>
+                </div>
+              </fieldset>
+              <div class="msf__actions">
+                <button class="btn btn--dark" type="button" data-form-next>
+                  Continuar
+                  <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </button>
+              </div>
+            </fieldset>
+
+            <fieldset class="msf__step-fields" data-form-step="2" hidden>
+              <legend class="visually-hidden">Seu lote e seu projeto</legend>
+              <div class="field">
+                <label for="f-local">Cidade e condomínio <span aria-hidden="true">*</span></label>
+                <input id="f-local" name="local" type="text" required>
+                <p class="field__error" id="e-local"></p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-area">Área do lote (m²)</label>
+                  <input id="f-area" name="area" type="number" inputmode="numeric" min="0">
+                </div>
+                <div class="field">
+                  <label for="f-projeto">Situação do projeto <span aria-hidden="true">*</span></label>
+                  <select id="f-projeto" name="projeto" required>
+                    <option value="">Selecione</option>
+                    <option>Ainda não tenho arquiteto</option>
+                    <option>Projeto em desenvolvimento</option>
+                    <option>Projeto pronto</option>
+                  </select>
+                  <p class="field__error" id="e-projeto"></p>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-arquiteto">Arquiteto</label>
+                  <input id="f-arquiteto" name="arquiteto" type="text">
+                </div>
+                <div class="field">
+                  <label for="f-quando">Quando quer começar? <span aria-hidden="true">*</span></label>
+                  <select id="f-quando" name="quando" required>
+                    <option value="">Selecione</option>
+                    <option>Nos próximos 3 meses</option>
+                    <option>Entre 3 e 6 meses</option>
+                    <option>Entre 6 e 12 meses</option>
+                    <option>Ainda não sei</option>
+                  </select>
+                  <p class="field__error" id="e-quando"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-link">Link do projeto</label>
+                <input id="f-link" name="link" type="url" inputmode="url" placeholder="https://">
+                <p class="field__error" id="e-link"></p>
+              </div>
+              <div class="field field--check">
+                <label class="check">
+                  <input id="f-lgpd" name="lgpd" type="checkbox" required>
+                  <span>Autorizo o uso dos meus dados para a Prumo entrar em contato sobre este estudo. <span aria-hidden="true">*</span></span>
+                </label>
+                <p class="field__error" id="e-lgpd"></p>
+              </div>
+              <div class="msf__actions">
+                <button class="btn btn--text" type="button" data-form-back>Voltar</button>
+                <button class="btn btn--dark" type="submit">
+                  Agendar estudo do meu lote
+                  <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </button>
+              </div>
+            </fieldset>
+
+            <div class="msf__success" hidden data-form-success tabindex="-1">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+              <p>Recebemos. Um engenheiro vai falar com você em até 1 dia útil para marcar a conversa inicial.</p>
+            </div>
+
+            <p class="msf__note">Formulário de demonstração: nenhum dado é enviado.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__bg" aria-hidden="true"></div>
+
+    <div class="container site-footer__top">
+      <div class="site-footer__brand">
+        <p class="site-footer__slogan">Obra no prumo.</p>
+        <p class="site-footer__lead">Casas sob medida em condomínios horizontais de Goiânia e Região Metropolitana.</p>
+        <div class="site-footer__actions">
+          <a class="btn btn--light" href="#agendar">
+            Agendar estudo do meu lote
+            <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+          <a class="btn btn--ghost-light" href="#agendar" data-whatsapp><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Entre em contato</a>
+        </div>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Rodapé">
+        <ul>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
+          <li><a href="#acompanhamento">Acompanhamento</a></li>
+          <li><a href="#contratos">Contratos</a></li>
+          <li><a href="#para-arquitetos">Para arquitetos</a></li>
+          <li><a href="#perguntas">Perguntas</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Logo gigante, cortada pela base do rodapé -->
+    <svg class="site-footer__wordmark" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+      <defs>
+        <linearGradient id="wordmark-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F2EEE7" stop-opacity=".16"/>
+          <stop offset="1" stop-color="#F2EEE7" stop-opacity=".02"/>
+        </linearGradient>
+      </defs>
+      <text x="0" y="242" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#wordmark-fill)">PRUMO</text>
+    </svg>
+
+    <div class="container site-footer__bottom">
+      <p class="site-footer__notice">Projeto conceitual de marca e website para uma empresa fictícia. Imagens ilustrativas.</p>
+      <a class="site-footer__top-link" href="#topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- MobileCtaBar -->
+  <div class="mobile-bar" data-mobile-bar>
+    <a class="btn btn--ghost-light mobile-bar__contact" href="#agendar" data-whatsapp><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>Entre em contato</a>
+    <a class="btn btn--dark mobile-bar__cta" href="#agendar">Agendar estudo</a>
+  </div>
+</body>
+</html>
